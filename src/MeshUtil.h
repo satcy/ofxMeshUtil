@@ -107,4 +107,17 @@ namespace MeshUtil {
             return true;
     }
     
+    void calcurateNormal(ofMeshFace & f) {
+        ofVec3f U, V;
+        
+        U = (f.getVertex(1)-f.getVertex(0));
+        V = (f.getVertex(2)-f.getVertex(0));
+        
+        ofVec3f n = U.getCrossed(V).getNormalized();
+        
+        f.setNormal(0, n);
+        f.setNormal(1, n);
+        f.setNormal(2, n);
+    }
+    
 }
