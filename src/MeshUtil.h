@@ -107,7 +107,7 @@ namespace MeshUtil {
             return true;
     }
     
-    void calcurateNormal(ofMeshFace & f) {
+    void calculateNormal(ofMeshFace & f) {
         ofVec3f U, V;
         
         U = (f.getVertex(1)-f.getVertex(0));
@@ -120,4 +120,7 @@ namespace MeshUtil {
         f.setNormal(2, n);
     }
     
+    void calcurateNormal(ofMeshFace & f) {
+        calculateNormal(f);
+    }
 }
