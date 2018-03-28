@@ -79,7 +79,7 @@ namespace MeshUtil {
         return mid.getInterpolated(p0, ratio).getInterpolated(mid.getInterpolated(p1, ratio), y);
     }
     
-    bool geIsPointOnTriangle(const ofVec3f & a,
+    bool getIsPointOnTriangle(const ofVec3f & a,
                              const ofVec3f & b,
                              const ofVec3f & c,
                              const ofVec3f & p,
