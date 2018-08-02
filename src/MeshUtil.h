@@ -36,4 +36,6 @@ namespace MeshUtil {
     void calculateNormal(ofMeshFace & f);
     
     void calcurateNormal(ofMeshFace & f);
+    
+    void calcurateNormals(ofMesh& mesh, bool bNormalize = true);
 }
