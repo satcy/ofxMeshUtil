@@ -122,7 +122,7 @@ namespace MeshUtil {
         calculateNormal(f);
     }
     
-    void calcurateNormals(ofMesh& mesh, bool bNormalize) {
+    void calculateNormals(ofMesh& mesh, bool bNormalize) {
         
         mesh.getNormals().clear();
         
