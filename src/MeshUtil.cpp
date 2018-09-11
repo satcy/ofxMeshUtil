@@ -62,17 +62,17 @@ namespace MeshUtil {
                                const ofVec3f & c,
                                float x, float y) {
         ofVec3f p0, p1;
-        ofVec3f mid = (a + b + c) / 3.0;
+        ofVec3f mid = a.getInterpolated((b + c) * 0.5, 2.0 / 3.0);
         float ratio = 0;
-        if ( x < 1/3.0 ) {
+        if ( x < 1.0/3.0 ) {
             p0.set(a); p1.set(b);
-            ratio = ofMap(x, 0, 1/3.0, 0, 1);
+            ratio = ofMap(x, 0, 1.0/3.0, 0, 1);
         } else if ( x < 2/3.0 ) {
             p0.set(b); p1.set(c);
-            ratio = ofMap(x, 1/3.0, 2/3.0, 0, 1);
+            ratio = ofMap(x, 1.0/3.0, 2.0/3.0, 0, 1);
         } else {
             p0.set(c); p1.set(a);
-            ratio = ofMap(x, 2/3.0, 1, 0, 1);
+            ratio = ofMap(x, 2.0/3.0, 1.0, 0, 1);
         }
         return mid.getInterpolated(p0, ratio).getInterpolated(mid.getInterpolated(p1, ratio), y);
     }
